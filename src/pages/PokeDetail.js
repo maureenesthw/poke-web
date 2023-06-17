@@ -65,7 +65,7 @@ export default function PokemonDetail({ pokemonName }) {
   }
 
   return (
-    <div>
+    <div className="container my-3 d-flex flex-column align-items-center">
       <h2>{pokemonData.name}</h2>
       <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
       <button onClick={catchPokemon} disabled={catchAttempt} className="btn btn-outline-dark">
