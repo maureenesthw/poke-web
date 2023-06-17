@@ -3,6 +3,8 @@ import axios from "axios";
 
 export default function PokemonDetail({ pokemonName }) {
   const [pokemonData, setPokemonData] = useState(null);
+  const [isCaught, setIsCaught] = useState(false);
+  const [catchAttempt, setCatchAttempt] = useState(false);
 
   useEffect(() => {
     // Make the API request to retrieve the details of the Pokémon
@@ -18,6 +20,46 @@ export default function PokemonDetail({ pokemonName }) {
       });
   }, [pokemonName]);
 
+  const catchPokemon = () => {
+    // Randomly determine if the catch attempt is successful (50% chance)
+    const isSuccess = Math.random() < 0.5;
+    setCatchAttempt(true);
+
+    if (isSuccess) {
+      // Add the caught Pokémon to the collection
+      const caughtPokemon = {
+        id: pokemonData.id,
+        name: pokemonData.name,
+      };
+
+      // Retrieve the current collection from local storage
+      const storedPokemon = localStorage.getItem("ownedPokemon");
+      let updatedPokemon = [];
+
+      if (storedPokemon) {
+        updatedPokemon = JSON.parse(storedPokemon);
+      }
+
+      // Check if the Pokémon is already in the collection
+      const isDuplicate = updatedPokemon.some(
+        (pokemon) => pokemon.id === caughtPokemon.id
+      );
+
+      if (!isDuplicate) {
+        updatedPokemon.push(caughtPokemon);
+
+        // Update the local storage with the updated collection
+        localStorage.setItem("ownedPokemon", JSON.stringify(updatedPokemon));
+
+        setIsCaught(true);
+      } else {
+        setIsCaught(false);
+      }
+    } else {
+      setIsCaught(false);
+    }
+  };
+
   if (!pokemonData) {
     return <div>Loading...</div>;
   }
@@ -26,6 +68,12 @@ export default function PokemonDetail({ pokemonName }) {
     <div>
       <h2>{pokemonData.name}</h2>
       <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+      <button onClick={catchPokemon} disabled={catchAttempt} className="btn btn-outline-dark">
+        {catchAttempt ? "Catching..." : "Catch!"}
+      </button>
+      {catchAttempt && (
+        <p style={{ color: "red" }}>{isCaught ? "You caught the Pokémon!" : "Failed to catch the Pokémon."}</p>
+      )}
       <h3>Type: {pokemonData.types.map((type) => type.type.name).join(", ")}</h3>
       <p>Weight: {pokemonData.weight} kg</p>
       <p>Height: {pokemonData.height} cm</p>

@@ -40,10 +40,9 @@ export default function PokeList() {
 
   return (
     <div className="container my-3">
-      <h1>PokeList</h1>
+      <h1>All Pokémon</h1>
       <div className="list-group my-3">
         {pokemonList.map(pokemon => (
-        //   <div key={pokemon.name} className="list-group-item d-flex align-items-center">
             <a 
             href={`/pokemon-list/${pokemon.name}`} 
             className="p"
@@ -61,10 +60,8 @@ export default function PokeList() {
                 <strong className="ms-3">{pokemon.name}</strong>
                 </button>
             </a>
-            
-        //   </div>
         ))}
-      </div>
+       </div>
       <div>
         <button
           type="button"
