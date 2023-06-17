@@ -1,13 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/navbar';
 import PokeList from './pages/PokeList';
+import PokemonDetail from './pages/PokeDetail';
 import YourPoke from './pages/YourPoke';
 import React from 'react';
 import Home from './pages/Home';
 
 function App() {
   let component
+  const pokemonName = window.location.pathname.split("/").pop();
   switch (window.location.pathname) {
     case "/":
       component = <Home />;
@@ -17,6 +18,9 @@ function App() {
       break;
     case "/owned-pokemons":
       component = <YourPoke />;
+      break;
+    case "/pokemon-list/" + pokemonName:
+      component = <PokemonDetail pokemonName={pokemonName}/>;
       break;
     default:
       component = <Home />;

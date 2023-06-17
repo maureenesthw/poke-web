@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* my code */
+/* Override default link styles */
+a {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherit the parent's color */
+}
+
+/* Change link color on hover */
+a:hover {
+  color: #4e4e4e; /* Replace with the desired hover color */
+}
