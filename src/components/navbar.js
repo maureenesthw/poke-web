@@ -12,10 +12,10 @@ export default function Navbar() {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" href="/pokemon-list">PokeList</a>
+          <a className="nav-link" href="/pokemon-list">All Pokémon</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/owned-pokemons">Your Pokemons</a>
+          <a className="nav-link" href="/owned-pokemons">Your Pokémon</a>
         </li>
         
       </ul>
