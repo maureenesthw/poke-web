@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Pokemon Web App
+Deployed web link: https://pokemon-web.up.railway.app/ 
+This is a web application built using ReactJS that allows users to explore and catch pokemons. The application retrieves data from the PokeAPI and displays information about pokemons such as their name, type, weight, height, abilities, moves, and stats. Users can catch pokemons with a success probability of 50% and add them to their collection. The owned pokemons persist even after a full page reload.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+To run the web app locally, follow these steps:
 
-In the project directory, you can run:
+1. Clone the Git repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd pokemon-web-app`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open a web browser and visit `http://localhost:3000` to access the application.
 
-### `npm start`
+## Pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The web app consists of the following pages:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Pokemon List Page
 
-### `npm test`
+This page displays a list of pokemons with pagination functionality. Users can browse through the list and click on a pokemon to view its details on the Pokemon Detail Page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pokemon Detail Page
 
-### `npm run build`
+On this page, users can view detailed information about a selected pokemon. The information includes the pokemon's image, name, type, weight, height, abilities, moves, and stats. Users can also attempt to catch the pokemon, and if successful, it will be added to their collection.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Owned Pokemon Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This page shows the pokemons that the user has caught and added to their collection. Users can release (remove) pokemons from their collection if desired.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## External APIs
 
-### `npm run eject`
+The web app utilizes the following external APIs:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [PokeAPI](https://pokeapi.co/docs/v2): The PokeAPI is used to retrieve data about pokemons, including their details and images.
+- [PokeAPI Sprites](https://github.com/PokeAPI/sprites): The PokeAPI Sprites repository is used to retrieve images of pokemons.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgments
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The developer would like to thank the creators and maintainers of the PokeAPI for providing the data and sprites used in this web app.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to explore and catch as many pokemons as you can! Enjoy the Pokemon Web App!
