@@ -1,6 +1,6 @@
 # Pokemon Web App
 
-Deployed web link: https://pokemon-web.up.railway.app/ 
+Deployed web link: [https://poke-web-alpha.vercel.app/](https://poke-web-alpha.vercel.app/)
 
 This is a web application built using ReactJS that allows users to explore and catch pokemons. The application retrieves data from the PokeAPI and displays information about pokemons such as their name, type, weight, height, abilities, moves, and stats. Users can catch pokemons with a success probability of 50% and add them to their collection. The owned pokemons persist even after a full page reload.
 
